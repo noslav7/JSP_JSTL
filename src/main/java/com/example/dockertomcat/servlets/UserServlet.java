@@ -24,9 +24,10 @@ public class UserServlet extends HttpServlet {
                 User user = userList.get(Integer.parseInt(param) - 1);
                 request.setAttribute("user", user);
             } else {
-                User myBoy = userList.get(0);
-                request.setAttribute("user", myBoy);
+                User user = userList.get(0);
+                request.setAttribute("user", user);
             }
+
             getServletContext().getRequestDispatcher("/user.jsp").forward(request, response);
         } catch (Exception e) {
             System.err.println(e.getMessage());
